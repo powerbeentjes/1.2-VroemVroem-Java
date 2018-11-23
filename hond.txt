@@ -7,7 +7,18 @@ klokje
 invalide 
 elektro
 9/10 kans dat bmw dubbelparkeer
-     
+veranderende drukte/prijzen
+kaartjesprijs ai
+mvc
+omzet
+prijs per dag bijhouden chart
+prijs per week enzo bijhouden chart     
+bezoekers per dag enzo
+bozoekeers per week
+chart enzo voor die troep
+hoofdstuk 8 konijnen
+exceptions enzo error handling
+
 
 ticket
 -DateTime
