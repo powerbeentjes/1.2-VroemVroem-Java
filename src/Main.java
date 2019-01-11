@@ -1,4 +1,6 @@
-package Parkeersimulator;
+//import Parkeersimulator;
+
+import Parkeersimulator.Simulator;
 
 public class Main{
 	public static void main(String[] args){
