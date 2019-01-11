@@ -1,5 +1,3 @@
-//import Parkeersimulator;
-
 import Parkeersimulator.Simulator;
 
 public class Main{
