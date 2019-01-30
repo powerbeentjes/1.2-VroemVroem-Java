@@ -21,11 +21,17 @@ public class SimulatorView extends JFrame {
         carParkView = new CarParkView();
 
         Container contentPane = getContentPane();
+
+
+        // Lekkere code van Dennis ©2019
+        new GUI();
+
         contentPane.add(carParkView, BorderLayout.CENTER);
         pack();
         setVisible(true);
 
         updateView();
+
     }
 
     public void updateView() {
@@ -137,10 +143,10 @@ public class SimulatorView extends JFrame {
     }
     
     private class CarParkView extends JPanel {
-        
+
         private Dimension size;
-        private Image carParkImage;    
-    
+        private Image carParkImage;
+
         /**
          * Constructor for objects of class CarPark
          */
@@ -154,7 +160,7 @@ public class SimulatorView extends JFrame {
         public Dimension getPreferredSize() {
             return new Dimension(800, 500);
         }
-    
+
         /**
          * Overriden. The car park view component needs to be redisplayed. Copy the
          * internal image to screen.

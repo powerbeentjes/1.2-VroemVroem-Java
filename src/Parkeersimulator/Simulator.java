@@ -17,8 +17,7 @@ public class Simulator {
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
-
-    private int tickPause = 100;
+    public static int tickPause = 100;
 
     int weekDayArrivals= 100; // average number of arriving cars per hour
     int weekendArrivals = 200; // average number of arriving cars per hour
@@ -35,6 +34,10 @@ public class Simulator {
         paymentCarQueue = new CarQueue();
         exitCarQueue = new CarQueue();
         simulatorView = new SimulatorView(3, 6, 30);
+    }
+
+    public void newTickSpeed(int newTick){
+        tickPause = newTick;
     }
 
     public void run() {
