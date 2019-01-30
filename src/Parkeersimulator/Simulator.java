@@ -44,21 +44,23 @@ public class Simulator {
         //for (int i = 0; i < 10000; i++) {
         // Maak simulatie oneindig
         while (true) {
-            tick();
+            if (tickPause != 1) {
+                tick();
+            }
         }
     }
 
     private void tick() {
-    	advanceTime();
-    	handleExit();
-    	updateViews();
-    	// Pause.
+        advanceTime();
+        handleExit();
+        updateViews();
+        // Pause.
         try {
             Thread.sleep(tickPause);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    	handleEntrance();
+        handleEntrance();
     }
 
     private void advanceTime(){
