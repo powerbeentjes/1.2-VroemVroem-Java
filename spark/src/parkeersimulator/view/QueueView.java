@@ -20,7 +20,7 @@ public class QueueView extends AbstractView {
 
         // Creating layout and chart
         setLayout(new BorderLayout());
-        queueView = new CategoryChartBuilder().width(500).height(400).theme(ChartTheme.GGPlot2).title("Queues").build();
+        queueView = new CategoryChartBuilder().width(500).height(400).theme(ChartTheme.GGPlot2).title("Queue").build();
         XChartPanel<CategoryChart> chartPane = new XChartPanel<>(queueView);
         add(chartPane);
         getChart();
@@ -34,14 +34,14 @@ public class QueueView extends AbstractView {
         queueView.getStyler().setLegendBorderColor(new Color(255, 255, 255, 0));
 
         // Adding first data
-        queueView.addSeries("Length", Arrays.asList("AdHoc", "Pass", "Payment", "Exit"), Arrays.asList(0, 0, 0, 0));
+        queueView.addSeries("Cars in line", Arrays.asList("AdHoc", "Pass", "Payment", "Exit"), Arrays.asList(0, 0, 0, 0));
     }
 
     @Override
     public void updateView() {
 
         // Updating data and refreshing chart
-        queueView.updateCategorySeries("Length", Arrays.asList("AdHoc", "Pass", "Payment", "Exit"), Arrays.asList(
+        queueView.updateCategorySeries("Cars in line", Arrays.asList("AdHoc", "Pass", "Payment", "Exit"), Arrays.asList(
                 simulator.entranceCarQueue.carsInQueue(),
                 simulator.entrancePassQueue.carsInQueue(),
                 simulator.paymentCarQueue.carsInQueue(),

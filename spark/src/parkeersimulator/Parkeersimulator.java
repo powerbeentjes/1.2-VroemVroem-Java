@@ -1,5 +1,7 @@
 package parkeersimulator;
 
+import java.io.*;
+import javax.sound.sampled.*;
 
 import parkeersimulator.controller.Controller;
 import parkeersimulator.model.Simulator;
@@ -32,4 +34,5 @@ public class Parkeersimulator {
 
         screen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
+
 }

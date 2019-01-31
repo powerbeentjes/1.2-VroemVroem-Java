@@ -32,8 +32,8 @@ public class Simulator extends AbstractModel  {
     private int hour = 0;
     private int minute = 0;
 
-    private int tickPause = 25;
-    public int tickAmount = 100;
+    public int tickPause = 25;
+    public int tickAmount = 10000;
 
     int weekDayArrivals= 100; // average number of arriving cars per hour
     int weekendArrivals = 200; // average number of arriving cars per hour
@@ -145,7 +145,7 @@ public class Simulator extends AbstractModel  {
    public String getTime()
     {
 
-        String time = DayOfWeek.of(this.day+1).toString() + " " +  this.hour + ":" + this.minute + ((this.hour > 12) ? " PM" : " AM" );
+        String time = DayOfWeek.of(this.day+1).toString() + " " + ((this.hour < 10) ? "0" : "") + this.hour + ":" + ((this.minute < 10) ? "0" : "") + this.minute;
         return time;
     }
 

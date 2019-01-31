@@ -73,9 +73,9 @@ public class PieView extends AbstractView {
 
         // Adding data to HashMap
         Map<String, Integer> pieData = new HashMap<>();
-        pieData.put("AdHocCar", simulator.getParkeerGarage().getTotalAdHocCarCarsParked());
-        pieData.put("Parkingpass", simulator.getParkeerGarage().getTotalParkingPassCarsParked());
-        pieData.put("Reserved", simulator.getParkeerGarage().getTotalReservationCarsParked());
+        pieData.put("Regular customer", simulator.getParkeerGarage().getTotalAdHocCarCarsParked());
+        pieData.put("Parking subscription", simulator.getParkeerGarage().getTotalParkingPassCarsParked());
+        pieData.put("Reservations", simulator.getParkeerGarage().getTotalReservationCarsParked());
 
         return pieData;
     }

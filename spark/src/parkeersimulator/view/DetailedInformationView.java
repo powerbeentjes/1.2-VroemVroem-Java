@@ -27,9 +27,9 @@ public class DetailedInformationView extends AbstractView {
     }
 
     private void createInfoTable (JPanel panel) {
-        JLabel titleLabel = new JLabel("Detailed information");
-        titleLabel.setBounds(10, 10, 200, 25);
-        panel.add(titleLabel);
+        /*JLabel titleLabel = new JLabel("");
+        titleLabel.setBounds(0, 0, 256, 24);
+        panel.add(titleLabel);*/
     }
 
     public void UpdateElement(String name, String content) {

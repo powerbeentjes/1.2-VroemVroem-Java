@@ -29,7 +29,33 @@ public class Controller extends AbstractController implements ActionListener {
 				minus.setEnabled(true);
 			}
 		});
-      
+
+
+        //Maakt een tekst veld om de ticks hoeveelheid te laten zien.
+        ticksText = new JLabel(""+simulator.tickPause + "mp/s");
+        add(ticksText);
+
+        //Maakt een + knop aan voor ticks hoeveelheid
+        plus = new JButton("+ Minuten");
+        plus.addActionListener(this);
+        add(plus);
+        //Maakt een - knop aan voor ticks hoeveelheid
+        minus = new JButton("- Minuten");
+        minus.addActionListener(this);
+        add(minus);
+
+        //Maakt een Startbutton aan
+        start = new JButton("Simulate");
+        //Voeg de actionListener toe
+        start.addActionListener(this);
+        //Voeg de button toe aan de Panel
+        add(start);
+
+        stop = new JButton("Halt");
+        stop.addActionListener(this);
+        add(stop);
+
+        /*
         //Maakt een tekst veld om de ticks hoeveelheid te laten zien.
         ticksText = new JLabel(""+simulator.tickAmount);
         add(ticksText);
@@ -44,17 +70,17 @@ public class Controller extends AbstractController implements ActionListener {
         add(minus);
         
         //Maakt een Startbutton aan
-        start = new JButton("Start");
+        start = new JButton("Simulate");
         //Voeg de actionListener toe
         start.addActionListener(this);
         //Voeg de button toe aan de Panel
         add(start);
         
-        stop = new JButton("Stop");
+        stop = new JButton("Halt");
         stop.addActionListener(this);
         add(stop);
         
-        
+        */
        
         
     }
@@ -102,7 +128,7 @@ public class Controller extends AbstractController implements ActionListener {
         }
         if (e.getSource()==plus)
         {
-        	if(simulator.tickAmount<=900)
+        	if(simulator.tickAmount<=9000)
             simulator.tickAmount+=100;
         	 ticksText.setText(""+simulator.tickAmount);
         }
