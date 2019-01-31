@@ -45,9 +45,9 @@ public class DetailedInformationView extends AbstractView {
      */
     @Override
     public void updateView() {
-        UpdateElement("This week's income", Float.toString(simulator.financing.getCurrentWeekIncome()));
-        UpdateElement("Today's income", Float.toString(simulator.financing.getCurrentDayIncome()));
-        UpdateElement("Upcoming income", Float.toString(simulator.financing.getUpcomingIncome()));
+        UpdateElement("Weekly income €", Float.toString(simulator.financing.getCurrentWeekIncome()));
+        UpdateElement("Income today €", Float.toString(simulator.financing.getCurrentDayIncome()));
+        //UpdateElement("Predicted income €", Float.toString(simulator.financing.getUpcomingIncome()));
 
         int index = 0;
         for (Map.Entry<String, String> entry : elements.entrySet()) {

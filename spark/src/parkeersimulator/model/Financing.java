@@ -36,7 +36,7 @@ public class Financing implements LineListener {
         addToWeekIncome(amountToAdd);
 
     }
-    void play(String audioFilePath) {
+    public void play(String audioFilePath) {
         File audioFile = new File(audioFilePath);
 
         try {
@@ -57,7 +57,7 @@ public class Financing implements LineListener {
             while (!playCompleted) {
                 // wait for the playback completes
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(100);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }

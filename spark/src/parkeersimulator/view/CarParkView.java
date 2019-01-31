@@ -20,7 +20,7 @@ public class CarParkView extends AbstractView {
         super(simulator);
         size = new Dimension(0, 0);
 
-        this.timeLabel = new JLabel("time");
+        this.timeLabel = new JLabel("MONDAY 00:00");
         add(timeLabel);
 
     }

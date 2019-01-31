@@ -36,17 +36,17 @@ public class PieView extends AbstractView {
 
         // Styling the chart
         pieChart2.getStyler().setLegendVisible(true);
-        pieChart2.getStyler().setLegendPosition(Styler.LegendPosition.InsideNW);
+        pieChart2.getStyler().setLegendPosition(Styler.LegendPosition.InsideSW);
         pieChart2.getStyler().setLegendBackgroundColor(new Color(255, 255, 255, 0));
         pieChart2.getStyler().setLegendBorderColor(new Color(255, 255, 255, 0));
-        pieChart2.getStyler().setDefaultSeriesRenderStyle(PieSeriesRenderStyle.Donut);
+        pieChart2.getStyler().setDefaultSeriesRenderStyle(PieSeriesRenderStyle.Pie);
         pieChart2.getStyler().setHasAnnotations(true);
         pieChart2.getStyler().setAnnotationType(PieStyler.AnnotationType.Value);
         pieChart2.getStyler().setAnnotationDistance(.82);
         pieChart2.getStyler().setSumVisible(true);
-        pieChart2.getStyler().setSumFontSize(30);
+        pieChart2.getStyler().setSumFontSize(48);
         pieChart2.getStyler().setDecimalPattern("#0");
-        pieChart2.getStyler().setPlotContentSize(.8);
+        pieChart2.getStyler().setPlotContentSize(0.75);
         pieChart2.getStyler().setChartFontColor(Color.BLACK);
         pieChart2.getStyler().setSeriesColors(sliceColors);
 

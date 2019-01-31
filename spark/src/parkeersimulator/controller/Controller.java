@@ -1,7 +1,9 @@
 package parkeersimulator.controller;
 
 
+import java.util.concurrent.ThreadLocalRandom;
 
+import parkeersimulator.model.Financing;
 import parkeersimulator.model.Simulator;
 import javax.swing.*;
 
@@ -16,7 +18,7 @@ public class Controller extends AbstractController implements ActionListener {
     private JButton plus, minus;
     private JLabel ticksText;
 
-    
+
     public Controller(Simulator simulators) {
         //Roept de constructor aan van AbstractController
         super(simulators);
@@ -118,5 +120,21 @@ public class Controller extends AbstractController implements ActionListener {
             ticksText.setText(""+simulator.tickPause + "mp/s");
 
         }
+
+
+        // nextInt is normally exclusive of the top value,
+        // so add 1 to make it inclusive
+
+        //HIER
+        Financing player = new Financing();
+        new Thread(() -> {
+            int randomNum = ThreadLocalRandom.current().nextInt(0, 10 + 1);
+            if (randomNum==1) {
+               player.play("\\assets\\horn2.wav");
+            } else {
+                player.play("\\assets\\horn.wav");
+            }
+        }).start();
+
     }
 }
