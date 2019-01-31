@@ -32,8 +32,7 @@ public class Simulator extends AbstractModel  {
     private int hour = 0;
     private int minute = 0;
 
-    public int tickPause = 25;
-    public int tickAmount = 10000;
+    public int tickPause = 50;
 
     int weekDayArrivals= 100; // average number of arriving cars per hour
     int weekendArrivals = 200; // average number of arriving cars per hour
@@ -70,7 +69,7 @@ public class Simulator extends AbstractModel  {
      * en de simulator start op het aantal stappen
      * @param aantalStappen
      */
-    public void run(int aantalStappen) {
+    public void run() {
         //check of er al een thread is
         if(thread==null){
             thread =new Thread (new Runnable() {
@@ -78,12 +77,8 @@ public class Simulator extends AbstractModel  {
                 @Override
                 public void run() {
                     //Roep de tick methode aan afhankelijk van het aantalstappen
-                    for (int i = 0; i < aantalStappen; i++) {
+                    while (true) {
                         tick();
-                        if(i==aantalStappen-1) {
-                        	thread = null;
-                        	plusMinButtonHandler.setButtons(true);
-                        }
                     }
                 }
             });
@@ -122,6 +117,11 @@ public class Simulator extends AbstractModel  {
         if (day != lastDay) {
             lastDay = day;
             financing.resetCurrentDay();
+
+            Financing player = new Financing();
+            new Thread(() -> {
+                player.play("\\assets\\kaching.wav");
+            }).start();
         }
     }
 

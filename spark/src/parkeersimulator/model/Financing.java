@@ -34,9 +34,6 @@ public class Financing implements LineListener {
         this.upcomingIncome -= amountToAdd;
 
         addToWeekIncome(amountToAdd);
-        Financing player = new Financing();
-        player.play("D:\\Programmeren\\Java\\VroemVroem\\spark\\assets\\kaching.wav");
-
 
     }
     void play(String audioFilePath) {
@@ -60,7 +57,7 @@ public class Financing implements LineListener {
             while (!playCompleted) {
                 // wait for the playback completes
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(10);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
