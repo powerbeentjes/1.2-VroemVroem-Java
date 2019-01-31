@@ -59,33 +59,6 @@ public class Controller extends AbstractController implements ActionListener {
         
     }
 
-
-    /**
-
-
-     general
-
-
-     general
-     Zoeken
-
-     LAAD MEER BERICHTEN
-
-     Zoeken
-
-     LAAD MEER BERICHTEN
-
-     * actionPerformed
-     * Deze methode luisterd naar de actions van de besturingselementen
-     * @param e ActionEvent
-
-
-    general
-    Zoeken
-
-    LAAD MEER BERICHTEN
-
-     */
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource()==start){

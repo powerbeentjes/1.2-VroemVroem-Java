@@ -12,7 +12,7 @@ public class ParkeerGarage {
     public static Location[] locations;
 
     /**
-     * Constructor voor het aanmaken van een ParkeerGarage.
+     * Constructor for objects of class ParkeerGarage
      * @param numberOfFloors
      * @param numberOfRows
      * @param numberOfPlaces
@@ -38,41 +38,37 @@ public class ParkeerGarage {
     }
 
     /**
-     * Deze methode retourneerd het aantal vakken van de parkeergarage
-     * @return aantal vakken
+     * @return floors
      */
     public int getNumberOfFloors() {
         return numberOfFloors;
     }
 
     /**
-     * Deze methode retourneerd het aantal rijen per vlak
-     * @return aantal rijen
+     * @return rows
      */
     public int getNumberOfRows() {
         return numberOfRows;
     }
 
     /**
-     * Deze methode retourneerd het aantal plaatsen per rij
-     * @return aantal plaatsen
+     * @return amount of places
      */
     public int getNumberOfPlaces() {
         return numberOfPlaces;
     }
 
     /**
-     * Deze methode retourneerd het totale aantal beschikbare plaatsen in de parkeergarage
-     * @return aantal beschikbare plaatsen in totaal
+     * @return total amount of free spaces
      */
     public int getNumberOfOpenSpots() {
         return numberOfOpenSpots;
     }
 
     /**
-     * Deze methode retourneerd een auto als er zich een auto bevindt op de plaats die meegegeven is
-     * @param location locatie die gecontroleerd moet worden
-     * @return auto die op de plek staat
+     * This method returns if a specified place is occupied or not
+     * @param location , the location that you want to test
+     * @return Car , the car that is taking up the space , returns null if no car is there
      */
     public Car getCarAt(Location location) {
         if (!locationIsValid(location)) {
@@ -82,10 +78,10 @@ public class ParkeerGarage {
     }
 
     /**
-     * Deze methode plaatst een auto op de megegeven plaats
-     * @param location locatie waar de auto geplaatst moet worden
-     * @param car auto die geplaatst moet worden
-     * @return een bool die waar is als de auto succesvol is geplaatst
+     * Ths method places a car in the specified location
+     * @param location location where the car needs to be placed
+     * @param car the car
+     * @return boolean true if placement was a succes
      */
     public boolean setCarAt(Location location, Car car) {
         if (!locationIsValid(location)) {
@@ -102,9 +98,9 @@ public class ParkeerGarage {
     }
 
     /**
-     * Deze methode verwijderd een auto van een plaats
-     * @param location de locatie waar een auto van verwijderd moet worden
-     * @return de auto die verwijderd is
+     * Ths method removes a car in the specified location
+     * @param location location where the car needs to be placed
+     * @return the car that got removed
      */
     public Car removeCarAt(Location location) {
         if (!locationIsValid(location)) {
@@ -121,8 +117,8 @@ public class ParkeerGarage {
     }
 
     /**
-     * Deze methode retourneerd de eerste beschikbare openbare plaats die gevonden kan worden
-     * @return de locatie die gevonden is
+     * This method specifies the first free parking place
+     * @return the found location
      */
     public Location getFirstFreePublicLocation() {
         for (int i = 0; i < locations.length; i++) {
@@ -134,8 +130,8 @@ public class ParkeerGarage {
     }
 
     /**
-     * Deze methode retourneerd de eerste beschikbare plaats die gereserveerd is voor mensen met een abonnement
-     * @return de beschikbare locatie voor mensen met een abonnement
+     * This method specifies the first free reserved parking place
+     * @return the found location for people with a subscription
      */
     public Location getFirstFreeParkingPassOnlyLocation() {
         for (int i = 0; i < locations.length; i++) {
@@ -147,8 +143,8 @@ public class ParkeerGarage {
     }
 
     /**
-     * Deze methode retourneerd de eerste gevonden auto die gaat vertrekken
-     * @return auto die vertrekt
+     * This method gives the first car that is going to leave
+     * @return the cra that is going to leave
      */
     public Car getFirstLeavingCar() {
         for (int i = 0; i < locations.length; i++) {
@@ -161,7 +157,7 @@ public class ParkeerGarage {
     }
 
     /**
-     * Deze methode zorgt ervoor dat iedere auto een tik verder gaat in de tijd
+     * Makes every car going up in time
      */
     public void tick() {
         for (int i = 0; i < locations.length; i++) {
@@ -173,9 +169,9 @@ public class ParkeerGarage {
     }
 
     /**
-     * Deze methode controleerd of een plaats bestaat
-     * @param location locatie die gecontroleerd moet worden
-     * @return bool die true is als de locatie bestaat
+     * Checks if a specified place exists
+     * @param location location that has to be checked
+     * @return boolean true if location exists
      */
     private boolean locationIsValid(Location location) {
         int floor = location.getFloor();

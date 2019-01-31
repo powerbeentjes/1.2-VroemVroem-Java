@@ -28,15 +28,16 @@ public class CarParkView extends AbstractView {
 
 
         /**
-         * Overridden. Tell the GUI manager how big we would like to be.
+         * @Override
+         * Tells car park how big it should be
          */
         public Dimension getPreferredSize() {
             return new Dimension(800, 500);
         }
 
         /**
-         * Overriden. The car park view component needs to be redisplayed. Copy the
-         * internal image to screen.
+         * @Override .
+         * Copy the internal image to screen.
          */
         public void paintComponent(Graphics g) {
             // Create a new car park image if the size has changed.
