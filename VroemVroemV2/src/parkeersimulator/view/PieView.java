@@ -32,11 +32,11 @@ public class PieView extends AbstractView {
     private void getChart() {
 
         // Colors
-        Color[] sliceColors = new Color[]{Color.RED, Color.BLUE, Color.ORANGE};
+        Color[] sliceColors = new Color[]{Color.GREEN, Color.BLUE, Color.ORANGE};
 
         // Styling the chart
         pieChart2.getStyler().setLegendVisible(true);
-        pieChart2.getStyler().setLegendPosition(Styler.LegendPosition.InsideSW);
+        pieChart2.getStyler().setLegendPosition(Styler.LegendPosition.OutsideS);
         pieChart2.getStyler().setLegendBackgroundColor(new Color(255, 255, 255, 0));
         pieChart2.getStyler().setLegendBorderColor(new Color(255, 255, 255, 0));
         pieChart2.getStyler().setDefaultSeriesRenderStyle(PieSeriesRenderStyle.Pie);
@@ -46,7 +46,7 @@ public class PieView extends AbstractView {
         pieChart2.getStyler().setSumVisible(true);
         pieChart2.getStyler().setSumFontSize(48);
         pieChart2.getStyler().setDecimalPattern("#0");
-        pieChart2.getStyler().setPlotContentSize(0.75);
+        pieChart2.getStyler().setPlotContentSize(0.9);
         pieChart2.getStyler().setChartFontColor(Color.BLACK);
         pieChart2.getStyler().setSeriesColors(sliceColors);
 
@@ -73,14 +73,14 @@ public class PieView extends AbstractView {
 
         // Adding data to HashMap
         Map<String, Integer> pieData = new HashMap<>();
-        pieData.put("AdHocCar", simulator.getParkeerGarage().getTotalAdHocCarCarsParked());
+        /*pieData.put("AdHocCar", simulator.getParkeerGarage().getTotalAdHocCarCarsParked());
         pieData.put("Parkingpass", simulator.getParkeerGarage().getTotalParkingPassCarsParked());
-        pieData.put("Reserved", simulator.getParkeerGarage().getTotalReservationCarsParked());
+        pieData.put("Reserved", simulator.getParkeerGarage().getTotalReservationCarsParked());*/
 
 
-        /*pieData.put("A Regular customer", simulator.getParkeerGarage().getTotalAdHocCarCarsParked());
-        pieData.put("BParking subscription", simulator.getParkeerGarage().getTotalParkingPassCarsParked());
-        pieData.put("CReservations", simulator.getParkeerGarage().getTotalReservationCarsParked());*/
+        pieData.put("Regular customer", simulator.getParkeerGarage().getTotalAdHocCarCarsParked());
+        pieData.put("Parking subscription", simulator.getParkeerGarage().getTotalParkingPassCarsParked());
+        pieData.put("Reservations", simulator.getParkeerGarage().getTotalReservationCarsParked());
 
         return pieData;
     }

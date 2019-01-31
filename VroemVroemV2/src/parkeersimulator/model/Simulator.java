@@ -120,7 +120,7 @@ public class Simulator extends AbstractModel  {
 
             Financing player = new Financing();
             new Thread(() -> {
-                player.play("spark/kaching.wav");
+                player.play("./kaching.wav");
 
             }).start();
         }

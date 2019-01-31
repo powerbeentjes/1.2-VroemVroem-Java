@@ -122,17 +122,14 @@ public class Controller extends AbstractController implements ActionListener {
         }
 
 
-        // nextInt is normally exclusive of the top value,
-        // so add 1 to make it inclusive
-
         //HIER
         Financing player = new Financing();
         new Thread(() -> {
             int randomNum = ThreadLocalRandom.current().nextInt(0, 10 + 1);
             if (randomNum==1) {
-               player.play("\\assets\\horn2.wav");
+                player.play("./horn2.wav");
             } else {
-                player.play("\\assets\\horn.wav");
+                player.play("./horn.wav");
             }
         }).start();
 

@@ -25,9 +25,9 @@ public class Parkeersimulator {
         screen.setResizable(false);
         screen.setVisible(true);
 
-        screen.getContentPane().add(new PieView(simulator), BorderLayout.WEST);
+        screen.getContentPane().add(new PieView(simulator), BorderLayout.EAST);
         screen.getContentPane().add(new QueueView(simulator), BorderLayout.CENTER);
-        screen.getContentPane().add(new DetailedInformationView(simulator), BorderLayout.EAST);
+        screen.getContentPane().add(new DetailedInformationView(simulator), BorderLayout.WEST);
         screen.getContentPane().add(new CarParkView(simulator), BorderLayout.NORTH);
         screen.getContentPane().add(new Controller(simulator), BorderLayout.SOUTH);
         screen.pack();

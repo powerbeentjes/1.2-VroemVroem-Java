@@ -23,7 +23,7 @@ public class Financing implements LineListener {
     private float upcomingIncome;
     boolean playCompleted;
 
-    public float singleDayPrice = 5.50f;
+    public float singleDayPrice = 5f;
 
     public void addToWeekIncome(float amountToAdd) {
         this.currentWeekIncome += amountToAdd;
