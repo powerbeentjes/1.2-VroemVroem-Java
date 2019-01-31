@@ -6,18 +6,20 @@ public class Simulator {
 
 	private static final String AD_HOC = "1";
 	private static final String PASS = "2";
-	
-	
+
+
 	private CarQueue entranceCarQueue;
     private CarQueue entrancePassQueue;
     private CarQueue paymentCarQueue;
     private CarQueue exitCarQueue;
     private SimulatorView simulatorView;
+    private static TimerThread timerThread;
 
     private int day = 0;
     private int hour = 0;
     private int minute = 0;
     public static int tickPause = 100;
+    private static boolean running = false;
 
     int weekDayArrivals= 100; // average number of arriving cars per hour
     int weekendArrivals = 200; // average number of arriving cars per hour
@@ -40,14 +42,17 @@ public class Simulator {
         tickPause = newTick;
     }
 
-    public void run() {
-        //for (int i = 0; i < 10000; i++) {
-        // Maak simulatie oneindig
-        while (true) {
-            if (tickPause != 1) {
-                tick();
-            }
-        }
+
+    public void start()
+    {
+        running = true;
+        timerThread = new TimerThread();
+        timerThread.start();
+    }
+
+    public void stop()
+    {
+        running = false;
     }
 
     private void tick() {
@@ -186,6 +191,28 @@ public class Simulator {
     private void carLeavesSpot(Car car){
     	simulatorView.removeCarAt(car.getLocation());
         exitCarQueue.addCar(car);
+    }
+
+    class TimerThread extends Thread
+    {
+        public void run()
+        {
+            while (running) {
+                if (tickPause != 1) {
+                    tick();
+                }
+                pause();
+            }
+        }
+
+        private void pause()
+        {
+            try {
+                Thread.sleep(300);   // pause for 300 milliseconds
+            }
+            catch (InterruptedException exc) {
+            }
+        }
     }
 
 }
