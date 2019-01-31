@@ -10,28 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-/**
- * Controller
- *
- * Deze klasse implementeerd AbstractController
- * En voegt alle besturingsElementen toe met de actionlisteners.
- *
- * @author Tim Pater, Jim Parengkuam, Wiebren van der Vaart, Kyran Oostra, Lars Volkertsma
- * @since 25-01-2017
- * @version 1.0
- *
- */
-
 public class Controller extends AbstractController implements ActionListener {
 
     private JButton start, stop;
     private JButton plus, minus;
     private JLabel ticksText;
-    
-    /**
-     * Constructor voor Controller
-     * @param simulators simulatorsModel
-     */
+
     
     public Controller(Simulator simulators) {
         //Roept de constructor aan van AbstractController

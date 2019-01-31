@@ -18,8 +18,8 @@ public class Parkeersimulator {
 
         Simulator simulator = new Simulator();
 
-        JFrame screen = new JFrame("ParkeerSimulator");
-        screen.setSize(1500, 600);
+        JFrame screen = new JFrame("Parkeer simulator - Groep Pieter, Dennis");
+        screen.setSize(1024, 640);
         screen.setResizable(false);
         screen.setVisible(true);
 
